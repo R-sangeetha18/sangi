@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.logo h1 {
+    margin: 0;
+    color: #4CAF50; /* Example color, adjust as needed */
+    font-size: 24px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-right: 25px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff; /* Example hover/active color */
+    border-bottom: 2px solid #007bff; /* Example active indicator */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 20px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 150px; /* Adjust as needed */
+}
+
+.search-box .fas {
+    color: #555;
+    margin-left: 5px;
+}
+
+.icons .fas {
+    font-size: 20px;
+    color: #555;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Button */
+  .dropdown-button {
+    background-color: white;
+    color: black solid;
+
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: poppins;
+  }
+
+  .dropdown-button:hover {
+    background-color: #00B4D8;
+  }
+
+  /* Dropdown Content */
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 2px
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: blue;
+  }
+
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+.brand-name{
+    font-size:3em;
+    color: #333;
+   
+}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.logo h1 {
+    margin: 0;
+    color: #4CAF50; /* Example color, adjust as needed */
+    font-size: 24px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-right: 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff; /* Example hover/active color */
+    border-bottom: 2px solid #007bff; /* Example active indicator */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: 30px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 150px; /* Adjust as needed */
+}
+
+.search-box .fas {
+    color: #555;
+    margin-left: 10px;
+}
+
+.icons .fas {
+    font-size: 20px;
+    color: #555;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Button */
+  .dropdown-button {
+    background-color: white;
+    color: black solid;
+width: fit-content;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: poppins;
+  }
+
+  .dropdown-button:hover {
+    background-color: #00B4D8;
+  }
+
+  /* Dropdown Content */
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 2px
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: blue;
+  }
+
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+.brand-name{
+    font-size:3em;
+    color: #333;
+   
+}
+.site-footer {
+    background-color: #add8e6; /* Light blue background as seen in the image */
+    color: black; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 2px solid gray; /* Separator line above copyright */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Underline for heading */
+    height: 2px;
+    background-color: gray;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9em;
+    color: black;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.product-list-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+   
+    width: 80%;
+    max-width: 90%;;
+    padding: 20px;
+    box-sizing: border-box;
+  margin-left: 10%;
+    margin-top: 5%;
+    line-height: 30px;
+}
+
+.table-header, .product-row {
+    display: flex;
+    align-items: center;
+    padding: 15px ;
+    border: 3px solid #cceeff;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.table-header {
+    font-weight: bold;
+    color: black;
+    border: 3px solid #cceeff; /* Light blue border for header */
+    margin-bottom: 20px;
+}
+
+.header-item, .product-details, .product-price, .product-quantity-control, .product-subtotal {
+    flex: 1;
+    text-align: center;
+}
+
+.header-item.product, .product-details {
+    flex: 2; /* Give more space to product details */
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 1rem;
+    color: #333;
+}
+
+.product-price, .product-subtotal {
+    font-size: 1rem;
+    color: #333;
+}
+
+.product-quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 80px; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+.quantity-input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+   
+}
+
+/* Hide default arrows for Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity-arrows {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-arrows button {
+    background-color: #f9f9f9;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 0.7em;
+    color: #666;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-arrows button:hover {
+    background-color: #e9e9e9;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.remove-item:hover {
+    color: #ff4d4d;
+    background-color: #ffe0e0;
+}
+.button1-container {
+  margin-top: 40px;
+      display: flex;
+      gap: 10px; /* Space between buttons */
+    }
+    button {
+      margin-left:2%;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 200px;
+    }
+    button:disabled {
+      margin-left: 20%;
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+      width: 200px;
+    }
+    
+    .card-container {
+      display: flex;
+      flex-direction: column; /* Stack cards vertically */
+      gap: 10px; /* Space between cards */
+    justify-content: flex-end;
+    
+    margin-left: 60%;
+    border:2px solid #00B4D8;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ width: 400px;
+ margin-bottom: 100px;
+
+    }
+
+    .card {
+      width: 200px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-left: 60px;
+    }
+    #btn{
+      margin-left: 20px;
+    }
+    .badges{
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  width: 15px;
+  height: 15px;
+  background: blue;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  }
+  .notification{
+   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #333333;
+  background: aqua;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+
+}
+.breadcrumbs {
+  font-size: 26px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 10px;
+}
+.nav-arrow {
+    text-decoration: none; /* Removes underline from links */
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 5px;
+    display: inline-block; /* Allows padding and alignment */
+}
+
+.nav-arrow:hover {
+    background-color: #ddd;
+}
+
+.prev-arrow {
+    float: left; /* Aligns to the left */
+}
+
+.next-arrow {
+    float: right; /* Aligns to the right */
+}
+
+</style>
+</head>
+<body>
+     <header class="main-header">
+        
+        <div class="logo">
+            <img src="images/logo.webp" alt="logo" width="100px;"> 
+       <span class="brand-name">EarthBubs</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <div class="dropdown">
+            <li><button class="dropdown-button">Product</button>
+            <div class="dropdown-content">
+              <a href="pamper.html">Pampers</a>
+              <a href="boys.html">Boy's Fashions</a>
+              <a href="girls.html">Girl's Fashions</a>
+              <a href="soap.html">Soap</a>
+              <a href="stroller.html">Stroller</a>
+              <a href="bottle.html">bottle</a>
+
+            </div>
+          </div></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+          <div class="header-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+              <div class="notification">
+               <span> <i class="fas fa-shopping-bag"></i></span>
+               <span class="badges">3</span>
+                
+                <i class="fas fa-user-circle"></i> </div>
+            </div>
+        </div>
+        </header>
+    <div class="breadcrumbs">
+    Home > Add to Cart
+  </div>
+    <div class="product-list-container">
+        <div class="table-header">
+            <span class="header-item product">Product</span>
+            <span class="header-item price">Price</span>
+            <span class="header-item quantity">Quantity</span>
+            <span class="header-item subtotal">Subtotal</span>
+        </div>
+
+        <div class="product-row">
+            <div class="product-details">
+                <img src="images/Frame 1171275018.png" alt="Milk Baby Soap" class="product-image">
+                <span class="product-name">Milk Baby Soap</span>
+            </div>
+            <span class="product-price">₹ 800</span>
+            <div class="product-quantity-control">
+                <input type="number" value="1" min="1" class="quantity-input">
+                <div class="quantity-arrows">
+                    <button class="quantity-arrow-up"><i class="fas fa-chevron-up"></i></button>
+                    <button class="quantity-arrow-down"><i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+            <span class="product-subtotal">₹ 800</span>
+            <button class="remove-item"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="product-row">
+            <div class="product-details">
+                <img src="images/Frame 1171275018.png" alt="Mee Mee Pampers" class="product-image">
+                <span class="product-name">Mee Mee Pampers</span>
+            </div>
+            <span class="product-price">₹ 700</span>
+            <div class="product-quantity-control">
+                <input type="number" value="2" min="1" class="quantity-input">
+                <div class="quantity-arrows">
+                    <button class="quantity-arrow-up"><i class="fas fa-chevron-up"></i></button>
+                    <button class="quantity-arrow-down"><i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+            <span class="product-subtotal">₹ 1400</span>
+            <button class="remove-item"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+       <div class="button1-container">
+    
+    <button disabled>Coupon Code</button>
+    <button>Apply Coupon</button>
+  </div>
+ <div class="card-container">
+  <h2>Card Total</h2>
+    <div class="card"> Subtotal:     ₹2200</div>
+    <div class="card">Discount:  ₹250</div>
+    <div class="card">Shipping: Free</div>
+    <div class="card">Total: ₹1,950</div>
+<center><button id="btn" style="margin-bottom: 30px; margin-top:20px;"><a href="checkout.html" style="text-decoration: none;color: #000;"> Process to checkout</a></button></center> 
+  </div>
+     <a href="contact.html" class="nav-arrow prev-arrow">&lt; Previous</a>
+    <a href="payment.html" class="nav-arrow next-arrow">Next &gt;</a>
+    <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h3>KNOW</h3>
+                <ul>
+                     <li><a href="index.html" style="text-decoration: none;color: black;">About Us</a></li>
+                    <li><a href="#">About Earthbubs Store</a></li>
+                    <li><a href="#">Bulk Purchase & Corporate Gifts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>TERMS & CONDITIONS</h3>
+                <ul>
+                    <li><a href="#">Shipping & Return Policies</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3><a href="contact.html">CONTACT US</a></h3>
+                <p>For Sale: <a href="mailto:Earthbubs@co.in">Earthbubs@co.in</a></p>
+                <p>Call: +91 1234567890</p>
+                <p>For Complaints: 1800 202 2222</p>
+                <p>Chat Time: Our Team is Available From Monday to Saturday from 9.00AM to 8.00PM</p>
+                <p>For Complaints: <a href="http://Ebcustomercare.com" target="_blank">Ebcustomercare.com</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+     
+
+        <div class="footer-bottom">
+            <p>Copyright© 2025 All Rights Reserved..</p>
+        </div>
+    </footer>
+</body>
+</html>

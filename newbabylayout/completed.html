@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Completed</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- You might use a library like Font Awesome for icons, include its CDN here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+   body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.logo h1 {
+    margin: 0;
+    color: #4CAF50; /* Example color, adjust as needed */
+    font-size: 24px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-right: 25px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff; /* Example hover/active color */
+    border-bottom: 2px solid #007bff; /* Example active indicator */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 20px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 150px; /* Adjust as needed */
+}
+
+.search-box .fas {
+    color: #555;
+    margin-left: 5px;
+}
+
+.icons .fas {
+    font-size: 20px;
+    color: #555;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Button */
+  .dropdown-button {
+    background-color: white;
+    color: black solid;
+
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: poppins;
+  }
+
+  .dropdown-button:hover {
+    background-color: #00B4D8;
+  }
+
+  /* Dropdown Content */
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 2px
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: blue;
+  }
+
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+.brand-name{
+    font-size:3em;
+    color: #333;
+   
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+   
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative; /* Needed for positioning the animation area */
+    z-index: 1; /* Ensure content is above confetti if applicable */
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.animation-area {
+    margin-bottom: 20px;
+    position: relative;
+    width: 150px; /* Adjust size of SVG container */
+    height: 150px; /* Adjust size of SVG container */
+    margin: 0 auto 20px;
+}
+
+/* SVG Checkmark Styling and Animation */
+.checkmark {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.checkmark path {
+    fill: none;
+    stroke: #28a745; /* Green color for the checkmark */
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000; /* Long dash array to hide the line initially */
+    stroke-dashoffset: 1000; /* Hide the line initially */
+    animation: drawCheckmark 1s ease-out forwards; /* Animation to draw the checkmark */
+}
+
+@keyframes drawCheckmark {
+    to {
+        stroke-dashoffset: 0; /* Draw the checkmark */
+    }
+}
+
+.order-id {
+    color: #6c757d;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #343a40;
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #495057;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Basic styling for the confetti canvas, if you implement it */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through to elements beneath */
+    z-index: 0; /* Place behind the main content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+.site-footer {
+    background-color: #add8e6; /* Light blue background as seen in the image */
+    color: black; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 2px solid gray; /* Separator line above copyright */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Underline for heading */
+    height: 2px;
+    background-color: gray;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9em;
+    color: black;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.breadcrumbs{
+    margin-top: 2%;
+    font-size: 1em;
+}
+.nav-arrow {
+    text-decoration: none; /* Removes underline from links */
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 5px;
+    display: inline-block; /* Allows padding and alignment */
+}
+
+.nav-arrow:hover {
+    background-color: #ddd;
+}
+
+.prev-arrow {
+    float: left; /* Aligns to the left */
+}
+
+.next-arrow {
+    float: right; /* Aligns to the right */
+}
+
+    </style>
+</head>
+<body>
+      <header class="main-header">
+        
+        <div class="logo">
+            <img src="images/logo.webp" alt="logo" width="100px;"> 
+       <span class="brand-name">EarthBubs</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <div class="dropdown">
+            <li><button class="dropdown-button">Product</button>
+            <div class="dropdown-content">
+              <a href="pamper.html">Pampers</a>
+              <a href="boys.html">Boy's Fashions</a>
+              <a href="girls.html">Girl's Fashions</a>
+              <a href="soap.html">Soap</a>
+              <a href="stroller.html">Stroller</a>
+              <a href="bottle.html">bottle</a>
+
+            </div>
+          </div></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </header>
+    
+  <div class="breadcrumbs">
+    Home > Add to cart > Payments > Order Completed
+  </div>
+    <div class="container">
+        <div class="animation-area">
+            <!-- SVG for checkmark and canvas for confetti go here -->
+            <svg class="checkmark" viewBox="0 0 24 24">
+                <path d="M4.1 12.7L9 17.6 20.3 6.3" fill="none"/>
+            </svg>
+            <canvas id="confettiCanvas"></canvas>
+        </div>
+        <p class="order-id">Order ID: OCD1202</p>
+        <h1>Your Order Is Completed!</h1>
+        <p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
+    </div>
+       <a href="index.html" class="nav-arrow prev-arrow">&lt; Previous</a>
+    <a href="boys.html" class="nav-arrow next-arrow">Next &gt;</a>
+     <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h3>KNOW</h3>
+                <ul>
+                    <li><a href="index.html" style="text-decoration: none;color: black;">About Us</a></li>
+                    <li><a href="#">About Earthbubs Store</a></li>
+                    <li><a href="#">Bulk Purchase & Corporate Gifts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>TERMS & CONDITIONS</h3>
+                <ul>
+                    <li><a href="#">Shipping & Return Policies</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3><a href="contact.html" style="text-decoration: none;color: black;">CONTACT US</a></h3>
+                <p>For Sale: <a href="mailto:Earthbubs@co.in">Earthbubs@co.in</a></p>
+                <p>Call: +91 1234567890</p>
+                <p>For Complaints: 1800 202 2222</p>
+                <p>Chat Time: Our Team is Available From Monday to Saturday from 9.00AM to 8.00PM</p>
+                <p>For Complaints: <a href="http://Ebcustomercare.com" target="_blank">Ebcustomercare.com</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright© 2025 All Rights Reserved..</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the canvas element
+    const confettiCanvas = document.getElementById('confettiCanvas');
+
+    // Create a confetti instance associated with the specific canvas
+    const myConfetti = confetti.create(confettiCanvas, {
+        resize: true, // Automatically resize the canvas with window resize
+        useWorker: true // Use web workers for better performance
+    });
+
+    // Function to trigger the confetti
+    function triggerConfetti() {
+        myConfetti({
+            particleCount: 150, // Number of confetti particles
+            spread: 90,         // How wide the confetti spreads (in degrees)
+            origin: { y: 0.6 }, // Start from the middle-top of the page
+            colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'] // Custom colors
+        });
+    }
+
+    // Trigger confetti after a short delay to allow CSS animations to start
+    setTimeout(triggerConfetti, 500); // Trigger confetti after 0.5 seconds
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+    <button class="nav-arrow prev-arrow">&#60;</button> <!-- Left arrow -->
+    <div class="slides">
+  <a href="index.html"></a>
+  <a href="pamper.html"></a>
+  <a href="boys.html"></a>
+    </div>
+    <button class="nav-arrow next-arrow">&#62;</button> <!-- Right arrow -->
+</div>
+<script>
+    const prevArrow = document.querySelector('.prev-arrow');
+const nextArrow = document.querySelector('.next-arrow');
+const slides = document.querySelectorAll('.slides img');
+let currentSlide = 0;
+
+function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active-slide'));
+    slides[n].classList.add('active-slide');
+}
+
+prevArrow.addEventListener('click', () => {
+    currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+    showSlide(currentSlide);
+});
+
+nextArrow.addEventListener('click', () => {
+    currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+    showSlide(currentSlide);
+});
+
+showSlide(currentSlide); // Show the initial slide
+
+</script>
+</body>
+</html>

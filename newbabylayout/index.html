@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarthBubs - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- You might use a library like Font Awesome for icons, include its CDN here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.logo h1 {
+    margin: 0;
+    color: #4CAF50; /* Example color, adjust as needed */
+    font-size: 24px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-right: 25px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff; /* Example hover/active color */
+    border-bottom: 2px solid #007bff; /* Example active indicator */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 20px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 150px; /* Adjust as needed */
+}
+
+.search-box .fas {
+    color: #555;
+    margin-left: 5px;
+}
+
+.icons .fas {
+    font-size: 20px;
+    color: #555;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Button */
+  .dropdown-button {
+    background-color: white;
+    color: black solid;
+
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: poppins;
+  }
+
+  .dropdown-button:hover {
+    background-color: #00B4D8;
+  }
+
+  /* Dropdown Content */
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 2px
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: blue;
+  }
+
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+.brand-name{
+    font-size:3em;
+    color: #333;
+   
+}
+
+.background-container {
+    background-image: url('images/rainbow.jpg'); /* Replace with your background image path */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100; /* Ensures the container takes at least the full viewport height */
+    display: flex; /* Enables flexbox for content alignment */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-start; /* Aligns content to the top */
+    color: white; /* Text color for readability over background */
+    text-align: center;
+    background-color: rgba(52, 210, 227, 0.5); ;
+}
+
+.banner {
+    height:550px;
+    margin-top: 0%;
+    margin-right: 50%;
+    width: 100vh;
+    padding: 20px 0;
+    background-color: rgba(52, 210, 227, 0.5); /* Semi-transparent background for the banner */
+    color: white;
+    text-align: center;
+    box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+
+
+.banner h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.banner p {
+    font-size: 1.2em;
+}
+
+main {
+    padding: 20px;
+    /* Further styling for your main content area */
+}
+
+
+.top-right-image {
+  position: absolute; /* Takes the image out of the normal document flow */
+  top: 105px;             /* Positions the image at the top edge */
+    margin-left: 24%;  
+      background-color: rgba(52, 210, 227, 0.5);     /* Positions the image at the right edge */
+}
+
+
+.cards-container {
+    display: grid; /* Changed to Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+    max-width: 1200px; /* Limit overall width */
+    width: 100%;
+    height: 350px;
+    margin-left: 100px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex; /* Keeping flexbox for vertical layout within the card */
+    flex-direction: column;
+ border: 2px solid  #00B4D8 ;/* Removed fixed width, flex-grow, flex-basis as Grid handles sizing now */
+}
+
+.card-image {
+    width: 100%;
+    height: 180px; /* Fixed height for the image container */
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin-top: 50px;
+margin-bottom: 80px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.card-footer {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f2f7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.category-text {
+    font-weight: bold;
+    color: #333;
+    font-size: 30px;
+}
+
+.arrow-icon {
+    color: #007bff;
+    font-size: 18px;
+}
+
+/* Responsive adjustments - simpler with Grid's auto-fit */
+@media (max-width: 480px) {
+    .cards-container {
+        padding: 10px;
+    }
+}
+  .containers{
+    display: grid;
+    grid-template-columns:
+      repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+
+  }
+  .outer-card {
+border:2px solid #00B4D8;
+    background-color:  #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Optional: for spacing if multiple outer cards */
+  }
+
+  .inner-card {
+    background-color: #5ed9f2;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-top: 15px;
+    /* Add space between outer card content and inner card */
+  }
+  .product-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+    justify-content: center;
+    max-width: 1200px; /* Limit overall width */
+    width: 100%;
+    margin-left: 10%;
+}
+
+.product-cards {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Fixed width for each card */
+    position: relative;
+    padding-bottom: 15px; /* Space for the button */
+    display: flex;
+    flex-direction: column;
+}
+
+.new-badge {
+    position: absolute;
+    
+    background-color: #007bff; /* Blue for "NEW" badge */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px; /* Fixed height for image container */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.product-details {
+    padding: 15px;
+    flex-grow: 1; /* Allows details section to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.rating {
+    color: #ffd700; /* Gold color for stars */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.rating i {
+    font-size: 0.9em;
+}
+
+.price {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.price .mrp {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+.price .discounted-price {
+ /* Red for discounted price */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.buy-button {
+    background-color: #007bff; /* Blue buy button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: calc(100% - 30px); /* Adjust for padding */
+    margin: 0 15px 15px; /* Center with spacing from bottom */
+    align-self: center; /* Center the button within the flex column */
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+.pagination-dots {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 40%;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #53c1dc;
+    border-radius: 50%;
+    display: inline-block;
+margin-right: 10px;
+    cursor: pointer;
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.dot.active {
+    background-color: #53c1dc;
+    height: 20px;
+    width: 20px;
+    border: #333 1px solid;
+ 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 30px); /* Two cards per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: calc(100% - 30px); /* Single card per row on mobile */
+    }
+}
+.product-page-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+   
+    overflow: hidden; /* Ensures image corners are rounded if needed by future styles */
+    max-width: 1000px;
+    width: 100%;
+ max-width: fit-content;
+    margin-left: 5%;
+}
+
+.product-image-section {
+    position: relative;
+    flex: 1;
+    min-width: 300px; /* Adjust as needed for smaller screens */
+}
+
+.product-image-section img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+
+
+
+.product-details-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-details-section h1 {
+    font-size: 4em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.product-details-section p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.buy-now-button {
+    display: inline-block;
+    background-color: skyblue;
+    color: black;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-page-container {
+        flex-direction: column; /* Stack image and details vertically */
+        max-width: 90%;
+    }
+
+    .product-image-section {
+        min-width: unset;
+        height: 300px; /* Fixed height for image on smaller screens */
+    }
+
+    .product-details-section {
+        padding: 20px;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+  
+   .product-details-section h1 {
+        font-size: 1.5em;
+    }
+
+    .product-details-section p {
+        font-size: 0.9em;
+    }
+
+    .buy-now-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    justify-content: center;
+    gap: 30px; /* Space between testimonial cards */
+    max-width: 1200px;
+    width: 100%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust as needed */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border: 10px solid #add8e6; /* Light blue border color */
+
+    /* Custom border radii for each corner: top-left, top-right, bottom-right, bottom-left */
+    border-radius: 50px 20px 50px 10px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Makes the profile image round */
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #e0e0e0; /* Light border around profile pic */
+}
+
+.profile-info h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.profile-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.quote {
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonial-card {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+}
+
+.faq-container {
+    background-color: #ffffff;
+    padding: 40px 60px;
+    border-radius: 8px;
+   
+    max-width: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 10%;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: black;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.faq-item {
+    border-bottom: 3px solid skyblue;
+    padding: 15px 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px; /* Space for the icon */
+}
+
+.faq-answer {
+    font-size: 16px;
+    color: black;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.icon {
+    font-size: 20px;
+    color: skyblue;
+}
+.circle-icon-container {
+    width: 40px; /* Set equal width and height for a perfect circle */
+    height: 40px;
+    background-color: #fff; /* Background color of the circle */
+    border-radius: 50%; /* Makes the square div a circle */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border: 2px solid skyblue;
+}
+
+/* Styles for the custom CSS chevron (from previous answers) */
+.chevron {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    position: relative;
+}
+
+.chevron::before {
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-style: solid;
+    border-color: black; /* Color of the chevron */
+    border-width: 0.15em 0.15em 0 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+}
+
+.chevron.up::before {
+    transform: rotate(-45deg); /* Points upwards */
+    top: 0.15em;
+    left: 0.15em;
+}
+
+.chevron.down::before {
+    transform: rotate(135deg); /* Points downwards */
+    top: 0;
+    left: 0.1em;
+}
+
+.site-footer {
+    background-color: #add8e6; /* Light blue background as seen in the image */
+    color: black; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 2px solid gray; /* Separator line above copyright */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Underline for heading */
+    height: 2px;
+    background-color: gray;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9em;
+    color: black;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.nav-arrow {
+    text-decoration: none; /* Removes underline from links */
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    display: inline-block; /* Allows padding and alignment */
+}
+
+.nav-arrow:hover {
+    background-color: #ddd;
+}
+
+.prev-arrow {
+    float: left; /* Aligns to the left */
+}
+
+.next-arrow {
+    float: right; /* Aligns to the right */
+}
+
+
+</style>
+
+</head>
+<body>
+    <header class="main-header">
+        
+        <div class="logo">
+            <img src="images/logo.webp" alt="logo" width="100px;"> 
+       <span class="brand-name">EarthBubs</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <div class="dropdown">
+            <li><button class="dropdown-button">Product</button>
+            <div class="dropdown-content">
+              <a href="pamper.html">Pampers</a>
+              <a href="boys.html">Boy's Fashions</a>
+              <a href="girls.html">Girl's Fashions</a>
+              <a href="soap.html">Soap</a>
+              <a href="stroller.html">Stroller</a>
+              <a href="bottle.html">bottle</a>
+
+            </div>
+          </div></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </header>
+      <div class="container">
+    <div class="background-container">
+        <header class="banner">
+            <h1>Gentle Care for Growing Joy </h1><br><br>
+            <p>Premium baby care products crafted with love,purity,and the softest materials-because your baby deserves
+              the
+              best.</p>
+            
+       
+        
+        
+  <img src="images/b1.png" alt="Description" class="top-right-image">
+  </header>
+  <!-- Other content here --> 
+    </div>
+    <div style="text-align: center;">
+    <h1>
+      Featured Catogories
+    </h1>
+    <h2>
+      Everything Your Baby Needs
+    </h2>
+  </div>
+  
+    <div class="cards-container">
+        <div class="product-card">
+            <div class="card-image">
+                <img src="images/mee-mee-breathable-premium-baby-diaper-pants-wetness-indicator-leak-proof-edges-s-96-pieces-product-images-orvu7oy8rid-p602697802-3-202306252316 2.png" alt="Diapers & Pampers">
+                <!-- Optional: Add elements like "Soft Like Cotton" and "Small pack 32 Pcs" as overlays within card-image or with absolute positioning -->
+            </div>
+            <div class="card-footer">
+                <span class="category-text">Diapers & Pampers</span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-image">
+                <img src="images/Frame 1171275010.png" alt="Baby Dress">
+            </div>
+            <div class="card-footer">
+                <span class="category-text">Baby Dress</span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-image">
+                <img src="images/Frame 1171275015.png" alt="Baby Soap">
+            </div>
+            <div class="card-footer">
+                <span class="category-text">Baby Soap</span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-image">
+                <img src="images/Frame 14.png" alt="Baby Stroller & Prams">
+            </div>
+            <div class="card-footer">
+                <span class="category-text">Baby Stroller & Prams</span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+        </div>
+    </div>
+ <div style="text-align: center;">
+    <h1>
+      Why Parents Trust Us.
+    </h1>
+    <h2>
+      Designed with Love.Backed with Science.
+    </h2>
+  </div>
+   <div class="containers">
+
+    <div class="outer-card">
+      <img src="images/7722240-512 1.png" alt="image" width="200px">
+      <div class="inner-card">
+        <h3>Dermatalogist Tested</h3>
+        <p>Every product is tested and safe for even the most sensitive baby skin.</p>
+      </div>
+    </div>
+    <div class="outer-card">
+      <img src="images/7722322-512 1.png" alt="image" width="200px">
+      <div class="inner-card">
+        <h3>Dermatalogist Tested</h3>
+        <p>Every product is tested and safe for even the most sensitive baby skin.</p>
+      </div>
+    </div>
+    <div class="outer-card">
+      <img src="images/6566888-512 1.png" alt="image" width="200px">
+      <div class="inner-card">
+        <h3>Dermatalogist Tested</h3>
+        <p>Every product is tested and safe for even the most sensitive baby skin.</p>
+      </div>
+    </div>
+    <div class="outer-card">
+      <img src="images/7454483-512 1.png" alt="image" width="200px">
+      <div class="inner-card">
+        <h3>Dermatalogist Tested</h3>
+        <p>Every product is tested and safe for even the most sensitive baby skin.</p>
+      </div>
+    </div>
+    <div class="outer-card">
+      <img src="images/7769334-512 1.png" alt="image" width="200px">
+      <div class="inner-card">
+        <h3>Dermatalogist Tested</h3>
+        <p>Every product is tested and safe for even the most sensitive baby skin.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h1>
+      Best Seller
+    </h1>
+    <h2>
+      Our Most Loved Products
+    </h2>
+  </div>
+   <div class="product-grid">
+        <div class="product-cards">
+            <span class="new-badge">NEW</span>
+            <div class="product-image">
+                <img src="images/Img-card-col.png" alt="Product Image 1">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">wipes</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">
+                    <span class="mrp">MRP ₹1444.00</span>
+                    <span class="discounted-price">Price ₹1299.00</span>
+                </div>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+
+        <div class="product-cards">
+            <span class="new-badge">NEW</span>
+            <div class="product-image">
+                <img src="images/Frame 1171275003.png" alt="Product Image 2">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Mama Miel Baby</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">
+                    <span class="mrp">MRP ₹1444.00</span>
+                    <span class="discounted-price">Price ₹1299.00</span>
+                </div>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+
+        <div class="product-cards">
+            <span class="new-badge">NEW</span>
+            <div class="product-image">
+                <img src="images/image 12.png" alt="Product Image 3">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Zibuyu</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">
+                    <span class="mrp">MRP ₹1444.00</span>
+                    <span class="discounted-price">Price ₹1299.00</span>
+                </div>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination-dots">
+        <span class="dot "></span>
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+     <div style="text-align: center;">
+    <h1>
+      Trending Products
+    </h1>
+    <h2>
+      Parents Favourites,Baby Approved.
+    </h2>
+  </div>
+   <div class="product-page-container">
+        <div class="product-image-section">
+            <img src="images/6-baby-stroller-pram-easy-to-fold-with-umbrella-fold-canopy-6-to-original-imagrsfrskubmszc 1.png" alt="Baby Stroller">
+          
+        </div>
+        <div class="product-details-section">
+            <h1>Baby Stroller</h1>
+            <p>Explore the world in comfort with our smooth and stylish baby stroller. Designed for safety, ease, and flexibility perfect for every little adventure. Lightweight, foldable, and parent-friendly for life on the go.</p>
+            <a href="#" class="buy-now-button">Buy Now</a>
+        </div>
+    </div>
+     <div class="product-page-container">
+       <div class="product-details-section">
+            <h2>Feeding Bottle</h2>
+      <p>The baby feeding bottle is made from 100% BPA-free,safe materials.Its soft silicone nipple feels natural and
+        gentle on the baby's mouth.The anti-colic design helps reduce gas and fussiness during feeding. It's
+        lightweight, easy to hold, and perfect for everyday use. </p>
+            <a href="#" class="buy-now-button">Buy Now</a>
+        </div>
+          <div class="product-image-section">
+           <img src="images/image 13.png">
+          
+        </div>
+     </div>
+  <div class="product-page-container">
+        <div class="product-image-section">
+            <img src="images/mee-mee-breathable-premium-baby-diaper-pants-wetness-indicator-leak-proof-edges-s-96-pieces-product-images-orvu7oy8rid-p602697802-3-202306252316 2.png">
+          
+        </div>
+        <div class="product-details-section">
+              <h2>Pampers</h2>
+      <p>Keep your baby dry, comfy, and smiling all day with our ultra-soft diapers. Designed with leak-lock technology
+        and breathable layers for extra protection.Gentle on delicate skin,perfect for day & night comfort.
+      </p>
+            <a href="#" class="buy-now-button">Buy Now</a>
+        </div>
+    </div>
+    <div style="text-align: center;margin-top: 100px;">
+    <h1 style="font-size: 3em;">
+      Customer Testimonial
+    </h1>
+    <h2>
+      Parent Favorites,Baby Approved.
+    </h2>
+     <div class="testimonial-container">
+        <div class="testimonial-card">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="Rahul S." class="profile-pic">
+                <div class="profile-info">
+                    <h3>Rahul S.</h3>
+                    <p>Bangalore, India</p>
+                </div>
+            </div>
+            <p class="quote">"We love the stroller - lightweight, easy to fold, and super smooth on roads. Perfect for city walks. The quality feels premium, and my daughter is always comfy in it."</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="Priya M." class="profile-pic">
+                <div class="profile-info">
+                    <h3>Priya M.</h3>
+                    <p>Chennai, India</p>
+                </div>
+            </div>
+            <p class="quote">"The EarthBubs diapers are amazing! My baby sleeps through the night without any leaks or rashes. I've tried many brands, but this one is truly gentle and reliable."</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="Anika R." class="profile-pic">
+                <div class="profile-info">
+                    <h3>Anika R.</h3>
+                    <p>Mumbai, India</p>
+                </div>
+            </div>
+            <p class="quote">"I ordered the baby Soap kit and I'm blown away. The lotion and wash are so gentle, and the natural fragrance is lovely. No irritation at all - just soft, healthy skin."</p>
+        </div>
+    </div>
+
+  
+    <div class="pagination-dots">
+        <span class="dot "></span>
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="subtitle">We're Here to Help - Every Step of the Way</p>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are your products safe for newborns?
+                <div class="circle-icon-container">
+                <span class="icon"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+</span></div>
+            </div>
+            <div class="faq-answer">
+                Yes, all our products are dermatologically tested and made with gentle, non-toxic ingredients that are safe for newborns and sensitive skin.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How long does delivery take?
+                <div class="circle-icon-container">
+                <span class="icon"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+</span></div>
+            </div>
+            <!-- Answer content would go here if visible initially -->
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I return or exchange a product?
+                <div class="circle-icon-container">
+                <span class="icon"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+</span></div>
+            </div>
+            <!-- Answer content would go here if visible initially -->
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What payment methods do you accept?
+                <div class="circle-icon-container">
+                <span class="icon"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+</span></div>
+            </div>
+            <!-- Answer content would go here if visible initially -->
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are Your skincare products organic or natural?
+                <div class="circle-icon-container">
+                <span class="icon"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+</span></div>
+            </div>
+            <!-- Answer content would go here if visible initially -->
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                How can I contact customer support?
+                <div class="circle-icon-container">
+                <span class="icon"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+</span></div>
+            </div>
+            <!-- Answer content would go here if visible initially -->
+        </div>
+    </div>
+    <a href="page1.html" class="nav-arrow prev-arrow">&lt; Previous</a>
+    <a href="pamper.html" class="nav-arrow next-arrow">Next &gt;</a>
+     <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h3>KNOW</h3>
+                <ul>
+                    <li><a href="index.html" style="text-decoration: none;color: black;">About Us</a></li>
+                    <li><a href="#">About Earthbubs Store</a></li>
+                    <li><a href="#">Bulk Purchase & Corporate Gifts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>TERMS & CONDITIONS</h3>
+                <ul>
+                    <li><a href="#">Shipping & Return Policies</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3><a href="contact.html">CONTACT US</a></h3>
+                <p>For Sale: <a href="mailto:Earthbubs@co.in">Earthbubs@co.in</a></p>
+                <p>Call: +91 1234567890</p>
+                <p>For Complaints: 1800 202 2222</p>
+                <p>Chat Time: Our Team is Available From Monday to Saturday from 9.00AM to 8.00PM</p>
+                <p>For Complaints: <a href="http://Ebcustomercare.com" target="_blank">Ebcustomercare.com</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright© 2025 All Rights Reserved..</p>
+        </div>
+    </footer>
+
+</body>
+</html>
